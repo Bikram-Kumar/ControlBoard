@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ControlBoard">
 
-        <service android:name="ControlBoard"
+        <service android:name=".ControlBoard"
             android:label="@string/control_board_label"
             android:permission="android.permission.BIND_INPUT_METHOD">
             
