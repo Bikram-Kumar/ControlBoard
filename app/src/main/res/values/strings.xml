@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Control Board</string>
+    <string name="control_board_label">Control Board</string>
 </resources>
