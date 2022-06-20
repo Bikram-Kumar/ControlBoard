@@ -1,6 +1,12 @@
+package com.bikram.controlboard;
+
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.Keyboard;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.InputConnection;
 
 
 public class ControlBoard extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
@@ -13,7 +19,7 @@ public class ControlBoard extends InputMethodService implements KeyboardView.OnK
      @Override
      public View onCreateInputView() {
          keyboardView = (KeyboardView) getLayoutInflater().inflate(R.layout.keyboard_view, null);
-         keyboard = new Keyboard(this, R.xml.keys_layout);
+         keyboard = new Keyboard(this, R.xml.keyboard);
          keyboardView.setKeyboard(keyboard);
          keyboardView.setOnKeyboardActionListener(this);
          return keyboardView;

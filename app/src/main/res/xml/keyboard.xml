@@ -4,8 +4,8 @@
      android:horizontalGap="3px"
      android:verticalGap="3px"
      android:keyHeight="60dp"
-     android:keyTextColor="@color/colorAccent"
-     android:keyBackground="@color/colorPrimaryDark"
+     android:keyTextColor="@color/white"
+     android:keyBackground="@color/black"
      >
      <Row>
          <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
@@ -60,6 +60,6 @@
          <Key android:codes="44" android:keyLabel="," android:keyWidth="10%p"  android:keyEdgeFlags="left"/>
          <Key android:codes="47" android:keyLabel="/" android:keyWidth="10%p" />
          <Key android:codes="32" android:keyLabel="SPACE" android:keyWidth="60%p" android:isRepeatable="true"/>
-         <Key android:codes="-4" android:keyBackground="@color/colorPrimary" android:keyLabel="DONE" android:keyWidth="20%p" android:keyEdgeFlags="right"/>
+         <Key android:codes="-4" android:keyBackground="@color/black" android:keyLabel="DONE" android:keyWidth="20%p" android:keyEdgeFlags="right"/>
      </Row>
  </Keyboard>
