@@ -1,100 +1,98 @@
 package com.bikram.controlboard;
 
 import android.inputmethodservice.InputMethodService;
-import android.inputmethodservice.KeyboardView;
-import android.inputmethodservice.Keyboard;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+import android.os.SystemClock;
 
-
-public class ControlBoard extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
+public class ControlBoard extends InputMethodService {
  
-     private KeyboardView keyboardView;
-     private Keyboard keyboard;
- 
-     private boolean caps = false;
+     private View keyboardView;
+     
+     int ctrlMask = KeyEvent.META_CTRL_MASK;
+     int altMask = KeyEvent.META_ALT_MASK;
+     int shiftMask = KeyEvent.META_SHIFT_MASK;
+     
+     private int metaState = 0;
+     
+     boolean ctrlPressed = false;
+     boolean altPressed = false;
+     boolean shiftPressed = false;
  
      @Override
      public View onCreateInputView() {
-         keyboardView = (KeyboardView) getLayoutInflater().inflate(R.layout.keyboard_view, null);
-         keyboard = new Keyboard(this, R.xml.keyboard);
-         keyboardView.setKeyboard(keyboard);
-         keyboardView.setOnKeyboardActionListener(this);
+         keyboardView = getLayoutInflater().inflate(R.layout.keyboard_view, null);
          return keyboardView;
      }
  
-     @Override
-     public void onPress(int i) {
- 
-     }
- 
-     @Override
-     public void onRelease(int i) {
- 
-     }
- 
- 
- 
-     @Override
-     public void onKey(int primaryCode, int[] keyCodes) {
-         InputConnection inputConnection = getCurrentInputConnection();
-         
-         if (inputConnection != null) {
-             switch(primaryCode) {
-                 case Keyboard.KEYCODE_DELETE :
-                     CharSequence selectedText = inputConnection.getSelectedText(0);
- 
-                     if (TextUtils.isEmpty(selectedText)) {
-                         inputConnection.deleteSurroundingText(1, 0);
-                     } else {
-                         inputConnection.commitText("", 1);
-                     }
-                 case Keyboard.KEYCODE_SHIFT:
-                     caps = !caps;
-                     keyboard.setShifted(caps);
-                     keyboardView.invalidateAllKeys();
-                     break;
-                 case Keyboard.KEYCODE_DONE:
-                     inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
- 
-                     break;
-                 default :
-                     char code = (char) primaryCode;
-                     if(Character.isLetter(code) && caps){
-                         code = Character.toUpperCase(code);
-                     }
-                     inputConnection.commitText(String.valueOf(code), 1);
- 
-             }
-         }
- 
-     }
- 
- 
-     @Override
-     public void onText(CharSequence charSequence) {
- 
-     }
- 
-     @Override
-     public void swipeLeft() {
- 
-     }
- 
-     @Override
-     public void swipeRight() {
- 
-     }
- 
-     @Override
-     public void swipeDown() {
- 
-     }
- 
-     @Override
-     public void swipeUp() {
- 
-     }
+
+    public void onKeyClick(View pressedKey) {
+        InputConnection inputConnection = getCurrentInputConnection();
+        if (inputConnection == null) return;
+        
+        String keyType = (String) pressedKey.getTag();
+        long now = System.currentTimeMillis();
+        
+        switch(keyType) {
+            case "CTRL":
+                ctrlPressed = !ctrlPressed;
+                break;
+            case "ALT":
+                altPressed = !altPressed;
+                break;
+            case "SHIFT":
+                shiftPressed = !shiftPressed;
+                break;
+                
+            default:
+                updateMetaState();
+                try {
+                    inputConnection.sendKeyEvent(new KeyEvent(now, now, KeyEvent.ACTION_DOWN, KeyEvent.class.getField("KEYCODE_" + keyType).getInt(null), 0, metaState));
+                } catch (IllegalAccessException | NoSuchFieldException e) {
+                    
+                }
+                metaState = 0;
+            }
+    }
+    
+    void updateMetaState() {
+        
+        String metaSequence = boolToIntString(ctrlPressed) + boolToIntString(altPressed) + boolToIntString(shiftPressed);
+
+        switch (metaSequence) {
+            case "000":
+                metaState = 0;
+                break;
+            case "100":
+                metaState = ctrlMask;
+                break;
+            case "010":
+                metaState = altMask;
+                break;
+            case "001":
+                metaState = shiftMask;
+                break;
+            case "110":
+                metaState = ctrlMask | altMask;
+                break;
+            case "101":
+                metaState = ctrlMask | shiftMask;
+                break;
+            case "011":
+                metaState = altMask | shiftMask;
+                break;
+            case "111":
+                metaState = ctrlMask | altMask | shiftMask;
+                break;
+        }
+        
+    }
+    
+    String boolToIntString(boolean b) {
+        return b ? "1" : "0";
+    }
+
  }
+

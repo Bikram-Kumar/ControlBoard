@@ -1,11 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.inputmethodservice.KeyboardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/keyboard_view"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:keyPreviewLayout="@layout/key_preview"
     android:layout_alignParentBottom="true">
 
-</android.inputmethodservice.KeyboardView>
+    <!-- First Row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        
+        <Button style="@style/NormalKeyStyles" android:tag="Q" android:text="q" />
+        <Button style="@style/NormalKeyStyles" android:tag="W" android:text="w" />
+        <Button style="@style/NormalKeyStyles" android:tag="E" android:text="e" />
+        <Button style="@style/NormalKeyStyles" android:tag="R" android:text="r" />
+        <Button style="@style/NormalKeyStyles" android:tag="T" android:text="t" />
+        <Button style="@style/NormalKeyStyles" android:tag="Y" android:text="y" />
+        <Button style="@style/NormalKeyStyles" android:tag="U" android:text="u" />
+        <Button style="@style/NormalKeyStyles" android:tag="I" android:text="i" />
+        <Button style="@style/NormalKeyStyles" android:tag="O" android:text="o" />
+        <Button style="@style/NormalKeyStyles" android:tag="P" android:text="p" />
+    </LinearLayout>
+    
+    
+    
+    <!-- Second Row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        
+        <Button style="@style/NormalKeyStyles" android:tag="A" android:text="a" />
+        <Button style="@style/NormalKeyStyles" android:tag="S" android:text="s" />
+        <Button style="@style/NormalKeyStyles" android:tag="D" android:text="d" />
+        <Button style="@style/NormalKeyStyles" android:tag="F" android:text="f" />
+        <Button style="@style/NormalKeyStyles" android:tag="G" android:text="g" />
+        <Button style="@style/NormalKeyStyles" android:tag="H" android:text="h" />
+        <Button style="@style/NormalKeyStyles" android:tag="J" android:text="j" />
+        <Button style="@style/NormalKeyStyles" android:tag="K" android:text="k" />
+        <Button style="@style/NormalKeyStyles" android:tag="L" android:text="l" />
+
+
+    </LinearLayout>
+    
+    <!-- Third Row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        
+        <Button style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="SHFT" />
+        <Button style="@style/NormalKeyStyles" android:tag="Z" android:text="z" />
+        <Button style="@style/NormalKeyStyles" android:tag="X" android:text="x" />
+        <Button style="@style/NormalKeyStyles" android:tag="C" android:text="c" />
+        <Button style="@style/NormalKeyStyles" android:tag="V" android:text="v" />
+        <Button style="@style/NormalKeyStyles" android:tag="B" android:text="b" />
+        <Button style="@style/NormalKeyStyles" android:tag="N" android:text="n" />
+        <Button style="@style/NormalKeyStyles" android:tag="M" android:text="m" />
+        <Button style="@style/NormalKeyStyles" android:tag="DEL" android:text="&lt;-" />
+
+
+    </LinearLayout>
+    
+    <!-- Fourth Row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        
+        <Button style="@style/NormalKeyStyles" android:tag="ChangeLayout" android:text="\?123" />
+        <Button style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" />
+        <Button style="@style/NormalKeyStyles" android:tag="ALT" android:text="Alt" />
+        <Button style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" />
+        <Button style="@style/NormalKeyStyles" android:tag="NUMPAD_LEFT_PAREN" android:text="(" />
+        <Button style="@style/NormalKeyStyles" android:tag="ENTER" android:text="&lt;-\|" />
+
+    </LinearLayout>
+    
+
+    
+
+
+</LinearLayout>
