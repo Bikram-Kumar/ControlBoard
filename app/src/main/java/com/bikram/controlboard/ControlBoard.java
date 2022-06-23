@@ -32,10 +32,23 @@ public class ControlBoard extends InputMethodService {
         InputConnection inputConnection = getCurrentInputConnection();
         if (inputConnection == null) return;
         
-        String keyType = (String) pressedKey.getTag();
         long now = System.currentTimeMillis();
+        String keyType = (String) pressedKey.getTag();
+        
+        if (keyType.contains("SHIFT_")) {
+            shiftPressed = !shiftPressed;
+            keyType = keyType.substring(6, keyType.length()); // We know the index of "SHIFT_" is 0, so we will extract the substring from index 6
+        }
         
         switch(keyType) {
+            case "LOAD_MAIN_KEYBOARD":
+                View mainKeyboardView = getLayoutInflater().inflate(R.layout.keyboard_view, null);
+                setInputView(mainKeyboardView);
+                break;
+            case "LOAD_SYMBOLS_KEYBOARD":
+                View symbolsKeyboardView = getLayoutInflater().inflate(R.layout.symbols_keyboard_view, null);
+                setInputView(symbolsKeyboardView);
+                break;
             case "CTRL":
                 ctrlPressed = !ctrlPressed;
                 break;
@@ -53,7 +66,10 @@ public class ControlBoard extends InputMethodService {
                 } catch (IllegalAccessException | NoSuchFieldException e) {
                     
                 }
-                metaState = 0;
+                
+                ctrlPressed = false;
+                altPressed = false;
+                shiftPressed = false;
             }
     }
     
