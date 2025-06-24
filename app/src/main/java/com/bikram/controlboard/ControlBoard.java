@@ -5,52 +5,105 @@ import android.inputmethodservice.InputMethodService;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.MotionEvent;
+import android.view.Gravity;
+import android.widget.TextView;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.view.inputmethod.InputConnection;
 
-public class ControlBoard extends InputMethodService {
- 
-     View mainKeyboardView;
-     View symbolsKeyboardView;
-     View currentInputView;
-     
-     int ctrlMask = KeyEvent.META_CTRL_MASK;
-     int altMask = KeyEvent.META_ALT_MASK;
-     int shiftMask = KeyEvent.META_SHIFT_MASK;
-     
-     private int metaState = 0;
-     
-     boolean ctrlPressed = false;
-     boolean altPressed = false;
-     boolean shiftPressed = false;
-     
-     boolean ctrlLocked = false;
-     boolean altLocked = false;
-     boolean shiftLocked = false;
-     
-     long doubleTapMaxDelay = 200;
-     
-     // This HashMap holds info about the last meta key pressed
-     // Its first entry should be the Key name <String,String>, and second the time <String,long>
-     HashMap<String,Object> lastMetaKeyPressedInfo = new HashMap<String,Object>();
-     // lastMetaKeyPressedInfo.put("Time", System.currentTimeMillis());
-     // lastMetaKeyPressedInfo.put("Key", "ALT/CTRL/whatever");
- 
-     @Override
-     public View onCreateInputView() {
-         
-         mainKeyboardView = getLayoutInflater().inflate(R.layout.keyboard_view, null);
-         symbolsKeyboardView = getLayoutInflater().inflate(R.layout.symbols_keyboard_view, null);
-         
-         currentInputView = mainKeyboardView;
-         return mainKeyboardView;
-     }
- 
+public class ControlBoard extends InputMethodService implements View.OnTouchListener {
+    
+    static ControlBoard self;
+    
+    View mainKeyboardView;
+    View symbolsKeyboardView;
+    View currentInputView;
+    
+    PopupWindow keyPopupWindow;
+    View currentPressedKey;
+    
+    int ctrlMask = KeyEvent.META_CTRL_MASK;
+    int altMask = KeyEvent.META_ALT_MASK;
+    int shiftMask = KeyEvent.META_SHIFT_MASK;
+    
+    private int metaState = 0;
+    
+    boolean ctrlPressed = false;
+    boolean altPressed = false;
+    boolean shiftPressed = false;
+    
+    boolean ctrlLocked = false;
+    boolean altLocked = false;
+    boolean shiftLocked = false;
+    
+    long doubleTapMaxDelay = 200;
+    
+    // This HashMap holds info about the last meta key pressed
+    // Its first entry should be the Key name <String,String>, and second the time <String,long>
+    HashMap<String,Object> lastMetaKeyPressedInfo = new HashMap<String,Object>();
+    // lastMetaKeyPressedInfo.put("Time", System.currentTimeMillis());
+    // lastMetaKeyPressedInfo.put("Key", "ALT/CTRL/whatever");
 
-    public void onKeyClick(View pressedKeyView) {
+    @Override
+    public View onCreateInputView() {
+        self = this;
+        mainKeyboardView = getLayoutInflater().inflate(R.layout.keyboard_view, null);
+        symbolsKeyboardView = getLayoutInflater().inflate(R.layout.symbols_keyboard_view, null);
+        
+        View keyPopupView = getLayoutInflater().inflate(R.layout.key_popup_view, null);
+        keyPopupWindow = new PopupWindow(keyPopupView);
+        
+        currentInputView = mainKeyboardView;
+        return mainKeyboardView;
+    }
+    
+    
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                currentPressedKey = view;
+                if (keyPopupWindow.isShowing()) keyPopupWindow.dismiss();
+                onKeyDown(view);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (currentPressedKey != view) {
+                    currentPressedKey = view;
+                    if (keyPopupWindow.isShowing()) keyPopupWindow.dismiss();
+                    onKeyDown(view);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                onKeyUp(view);
+                break;
+        }
+
+        return true;
+    }
+    
+    public void onKeyDown(View pressedKeyView) {
         Button pressedKey = (Button) pressedKeyView;
         InputConnection inputConnection = getCurrentInputConnection();
         if (inputConnection == null) return;
+        
+        ((TextView)keyPopupWindow.getContentView()).setText(pressedKey.getText());
+        int height = pressedKey.getHeight();
+        keyPopupWindow.setHeight(2 * height);
+        keyPopupWindow.setWidth(pressedKey.getWidth());
+        int[] loc = new int[2];
+        pressedKey.getLocationInWindow(loc);
+        keyPopupWindow.showAtLocation(pressedKey, Gravity.NO_GRAVITY, loc[0], loc[1]-height);
+        
+    }
+ 
+
+    public void onKeyUp(View pressedKeyView) {
+        Button pressedKey = (Button) pressedKeyView;
+        InputConnection inputConnection = getCurrentInputConnection();
+        if (inputConnection == null) return;
+        
+        keyPopupWindow.dismiss();
         
         long now = System.currentTimeMillis();
         String keyType = (String) pressedKey.getTag();

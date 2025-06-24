@@ -18,16 +18,16 @@
         android:background="#33000000"
         >
         
-        <Button style="@style/NormalKeyStyles" android:tag="1" android:text="1" android:layout_marginLeft="4dp" />
-        <Button style="@style/NormalKeyStyles" android:tag="2" android:text="2" />
-        <Button style="@style/NormalKeyStyles" android:tag="3" android:text="3" />
-        <Button style="@style/NormalKeyStyles" android:tag="4" android:text="4" />
-        <Button style="@style/NormalKeyStyles" android:tag="5" android:text="5" />
-        <Button style="@style/NormalKeyStyles" android:tag="6" android:text="6" />
-        <Button style="@style/NormalKeyStyles" android:tag="7" android:text="7" />
-        <Button style="@style/NormalKeyStyles" android:tag="8" android:text="8" />
-        <Button style="@style/NormalKeyStyles" android:tag="9" android:text="9" />
-        <Button style="@style/NormalKeyStyles" android:tag="0" android:text="0" android:layout_marginRight="4dp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="1" android:text="1" android:layout_marginLeft="4dp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="2" android:text="2" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="3" android:text="3" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="4" android:text="4" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="5" android:text="5" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="6" android:text="6" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="7" android:text="7" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="8" android:text="8" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="9" android:text="9" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="0" android:text="0" android:layout_marginRight="4dp" />
     </LinearLayout>
     
     
@@ -39,16 +39,16 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp" >
         
-        <Button style="@style/NormalKeyStyles" android:tag="Q" android:text="q" />
-        <Button style="@style/NormalKeyStyles" android:tag="W" android:text="w" />
-        <Button style="@style/NormalKeyStyles" android:tag="E" android:text="e" />
-        <Button style="@style/NormalKeyStyles" android:tag="R" android:text="r" />
-        <Button style="@style/NormalKeyStyles" android:tag="T" android:text="t" />
-        <Button style="@style/NormalKeyStyles" android:tag="Y" android:text="y" />
-        <Button style="@style/NormalKeyStyles" android:tag="U" android:text="u" />
-        <Button style="@style/NormalKeyStyles" android:tag="I" android:text="i" />
-        <Button style="@style/NormalKeyStyles" android:tag="O" android:text="o" />
-        <Button style="@style/NormalKeyStyles" android:tag="P" android:text="p" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="Q" android:text="q" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="W" android:text="w" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="E" android:text="e" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="R" android:text="r" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="T" android:text="t" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="Y" android:text="y" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="U" android:text="u" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="I" android:text="i" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="O" android:text="o" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="P" android:text="p" />
     </LinearLayout>
     
     
@@ -61,15 +61,15 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
         
-        <Button style="@style/NormalKeyStyles" android:tag="A" android:text="a" />
-        <Button style="@style/NormalKeyStyles" android:tag="S" android:text="s" />
-        <Button style="@style/NormalKeyStyles" android:tag="D" android:text="d" />
-        <Button style="@style/NormalKeyStyles" android:tag="F" android:text="f" />
-        <Button style="@style/NormalKeyStyles" android:tag="G" android:text="g" />
-        <Button style="@style/NormalKeyStyles" android:tag="H" android:text="h" />
-        <Button style="@style/NormalKeyStyles" android:tag="J" android:text="j" />
-        <Button style="@style/NormalKeyStyles" android:tag="K" android:text="k" />
-        <Button style="@style/NormalKeyStyles" android:tag="L" android:text="l" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="A" android:text="a" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="S" android:text="s" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="D" android:text="d" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="F" android:text="f" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="G" android:text="g" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="H" android:text="h" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="J" android:text="j" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="K" android:text="k" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="L" android:text="l" />
 
 
     </LinearLayout>
@@ -82,15 +82,15 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp" >
         
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="\u21e7" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="Z" android:text="z" />
-        <Button style="@style/NormalKeyStyles" android:tag="X" android:text="x" />
-        <Button style="@style/NormalKeyStyles" android:tag="C" android:text="c" />
-        <Button style="@style/NormalKeyStyles" android:tag="V" android:text="v" />
-        <Button style="@style/NormalKeyStyles" android:tag="B" android:text="b" />
-        <Button style="@style/NormalKeyStyles" android:tag="N" android:text="n" />
-        <Button style="@style/NormalKeyStyles" android:tag="M" android:text="m" />
-        <Button style="@style/NormalKeyStyles" android:tag="DEL" android:text="\u232b" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="\u21e7" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="Z" android:text="z" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="X" android:text="x" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="C" android:text="c" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="V" android:text="v" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="B" android:text="b" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="N" android:text="n" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="M" android:text="m" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DEL" android:text="\u232b" />
 
 
     </LinearLayout>
@@ -105,18 +105,15 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="8dp">
         
-        <Button style="@style/NormalKeyStyles" android:tag="LOAD_SYMBOLS_KEYBOARD" android:text="&amp;\#\!\?" android:textSize="16sp" />
-        <Button style="@style/NormalKeyStyles" android:tag="COMMA" android:text="," />
-        <Button style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="ALT" android:text="Alt" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="24dp" android:layout_weight="2.5" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
-        <Button style="@style/NormalKeyStyles" android:tag="PERIOD" android:text="." />
-        <Button style="@style/NormalKeyStyles" android:tag="ENTER" android:text="\u21a9" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="LOAD_SYMBOLS_KEYBOARD" android:text="&amp;\#\!\?" android:textSize="16sp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="COMMA" android:text="," />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="ALT" android:text="Alt" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="24dp" android:layout_weight="2.5" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="PERIOD" android:text="." />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="ENTER" android:text="\u21a9" />
 
     </LinearLayout>
     
-
-    
-
 
 </LinearLayout>

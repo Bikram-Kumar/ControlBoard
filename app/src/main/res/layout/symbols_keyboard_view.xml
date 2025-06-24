@@ -2,6 +2,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CB="com.bikram.controlboard"
     android:id="@+id/symbols_keyboard_view"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -17,16 +18,16 @@
         android:layout_height="48dp"
         android:background="#33000000" >
         
-        <Button style="@style/NormalKeyStyles" android:tag="ALT" android:text="Alt" android:textSize="16sp" android:layout_marginLeft="4dp" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_GRAVE" android:text="\~" />
-        <Button style="@style/NormalKeyStyles" android:tag="GRAVE" android:text="\`" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_BACKSLASH" android:text="\|" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_5" android:text="\%" />
-        <Button style="@style/NormalKeyStyles" android:tag="LEFT_BRACKET" android:text="\[" />
-        <Button style="@style/NormalKeyStyles" android:tag="RIGHT_BRACKET" android:text="\]" />
-        <Button style="@style/NormalKeyStyles" android:tag="MOVE_HOME" android:text="Home" android:textSize="12sp" />
-        <Button style="@style/NormalKeyStyles" android:tag="DPAD_UP" android:text="\u2191" />
-        <Button style="@style/NormalKeyStyles" android:tag="MOVE_END" android:text="End" android:textSize="12sp" android:layout_marginRight="4dp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="ALT" android:text="Alt" android:textSize="16sp" android:layout_marginLeft="4dp" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_GRAVE" android:text="\~" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="GRAVE" android:text="\`" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_BACKSLASH" android:text="\|" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_5" android:text="\%" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="LEFT_BRACKET" android:text="\[" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="RIGHT_BRACKET" android:text="\]" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="MOVE_HOME" android:text="Home" android:textSize="12sp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DPAD_UP" android:text="\u2191" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="MOVE_END" android:text="End" android:textSize="12sp" android:layout_marginRight="4dp" />
     </LinearLayout>
     
     
@@ -38,16 +39,16 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         >
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_COMMA" android:text="&lt;" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_PERIOD" android:text="&gt;" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_LEFT_BRACKET" android:text="\{" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_RIGHT_BRACKET" android:text="\}" />
-        <Button style="@style/NormalKeyStyles" android:tag="EQUALS" android:text="\=" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_6" android:text="\^" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_4" android:text="\$" />
-        <Button style="@style/NormalKeyStyles" android:tag="DPAD_LEFT" android:text="\u2190" />
-        <Button style="@style/NormalKeyStyles" android:tag="DPAD_DOWN" android:text="\u2193" />
-        <Button style="@style/NormalKeyStyles" android:tag="DPAD_RIGHT" android:text="\u2192" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_COMMA" android:text="&lt;" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_PERIOD" android:text="&gt;" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_LEFT_BRACKET" android:text="\{" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_RIGHT_BRACKET" android:text="\}" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="EQUALS" android:text="\=" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_6" android:text="\^" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_4" android:text="\$" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DPAD_LEFT" android:text="\u2190" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DPAD_DOWN" android:text="\u2193" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DPAD_RIGHT" android:text="\u2192" />
     </LinearLayout>
     
     
@@ -61,16 +62,16 @@
         android:layout_marginRight="4dp"
         >
         
-        <Button style="@style/NormalKeyStyles" android:tag="AT" android:text="\@" />
-        <Button style="@style/NormalKeyStyles" android:tag="POUND" android:text="\#" />
-        <Button style="@style/NormalKeyStyles" android:tag="BACKSLASH" android:text="\\" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_MINUS" android:text="\_" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_7" android:text="&amp;" />
-        <Button style="@style/NormalKeyStyles" android:tag="MINUS" android:text="\-" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_EQUALS" android:text="\+" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_9" android:text="\(" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_0" android:text="\)" />
-        <Button style="@style/NormalKeyStyles" android:tag="SLASH" android:text="\/" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="AT" android:text="\@" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="POUND" android:text="\#" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="BACKSLASH" android:text="\\" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_MINUS" android:text="\_" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_7" android:text="&amp;" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="MINUS" android:text="\-" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_EQUALS" android:text="\+" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_9" android:text="\(" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_0" android:text="\)" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SLASH" android:text="\/" />
 
 
     </LinearLayout>
@@ -84,15 +85,15 @@
         android:layout_marginRight="4dp"
         >
         
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="\u21e7" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="STAR" android:text="\*" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_APOSTROPHE" android:text="&quot;" />
-        <Button style="@style/NormalKeyStyles" android:tag="APOSTROPHE" android:text="\'" /> 
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_SEMICOLON" android:text="\:" />
-        <Button style="@style/NormalKeyStyles" android:tag="SEMICOLON" android:text="\;" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_1" android:text="\!" />
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT_SLASH" android:text="\?" />
-        <Button style="@style/NormalKeyStyles" android:tag="DEL" android:text="\u232b" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="\u21e7" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="STAR" android:text="\*" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_APOSTROPHE" android:text="&quot;" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="APOSTROPHE" android:text="\'" /> 
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_SEMICOLON" android:text="\:" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SEMICOLON" android:text="\;" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_1" android:text="\!" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SHIFT_SLASH" android:text="\?" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="DEL" android:text="\u232b" />
 
 
     </LinearLayout>
@@ -107,12 +108,12 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="8dp">
         
-        <Button style="@style/NormalKeyStyles" android:tag="LOAD_MAIN_KEYBOARD" android:text="ABC" android:textSize="16sp" />
-        <Button style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
-        <Button style="@style/NormalKeyStyles" android:tag="COMMA" android:text="," />
-        <Button style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="24dp" android:layout_weight="2.5" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
-        <Button style="@style/NormalKeyStyles" android:tag="TAB" android:text="\u21b9" />
-        <Button style="@style/NormalKeyStyles" android:tag="ENTER" android:text="\u21a9" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="LOAD_MAIN_KEYBOARD" android:text="ABC" android:textSize="16sp" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="COMMA" android:text="," />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="24dp" android:layout_weight="2.5" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="TAB" android:text="\u21b9" />
+        <com.bikram.controlboard.KeyButton style="@style/NormalKeyStyles" android:tag="ENTER" android:text="\u21a9" />
 
     </LinearLayout>
     
