@@ -3,15 +3,16 @@ plugins {
 }
 
 android {
-    compileSdk 32
-    buildToolsVersion "32.0.0"
+    namespace = "com.bikram.controlboard"
+    compileSdk = 32
+    buildToolsVersion "35.0.0"
 
     defaultConfig {
-        applicationId "com.bikram.controlboard"
-        minSdk 24
-        targetSdk 32
+        applicationId "com.controlboard"
+        minSdk = 24
+        targetSdk = 32
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,8 +24,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -38,3 +39,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-Xlint:deprecation']
+}

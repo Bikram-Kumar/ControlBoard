@@ -84,7 +84,7 @@
         android:layout_marginRight="4dp"
         >
         
-        <Button style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="&#x1F845;" android:textColor="@color/meta_key_color_selector" />
+        <Button style="@style/NormalKeyStyles" android:tag="SHIFT" android:text="\u21e7" android:textColor="@color/meta_key_color_selector" />
         <Button style="@style/NormalKeyStyles" android:tag="STAR" android:text="\*" />
         <Button style="@style/NormalKeyStyles" android:tag="SHIFT_APOSTROPHE" android:text="&quot;" />
         <Button style="@style/NormalKeyStyles" android:tag="APOSTROPHE" android:text="\'" /> 
@@ -102,6 +102,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:gravity="center"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="8dp">
@@ -109,7 +110,7 @@
         <Button style="@style/NormalKeyStyles" android:tag="LOAD_MAIN_KEYBOARD" android:text="ABC" android:textSize="16sp" />
         <Button style="@style/NormalKeyStyles" android:tag="CTRL" android:text="Ctrl" android:textSize="16sp" android:textColor="@color/meta_key_color_selector" />
         <Button style="@style/NormalKeyStyles" android:tag="COMMA" android:text="," />
-        <Button style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="28dp" android:layout_weight="3" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
+        <Button style="@style/NormalKeyStyles" android:tag="SPACE" android:text="Space" android:textSize="12sp" android:layout_height="24dp" android:layout_weight="2.5" android:padding="0dp" android:background="@drawable/space_key_bg_selector"/>
         <Button style="@style/NormalKeyStyles" android:tag="TAB" android:text="\u21b9" />
         <Button style="@style/NormalKeyStyles" android:tag="ENTER" android:text="\u21a9" />
 
