@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top|center_horizontal"
-    android:background="@android:color/white"
-    android:textColor="@android:color/black"
+    android:background="@drawable/key_popup_bg"
+    android:textColor="@color/white"
     android:textSize="20sp">
 </TextView>

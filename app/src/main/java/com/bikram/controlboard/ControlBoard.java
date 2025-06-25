@@ -53,11 +53,11 @@ public class ControlBoard extends InputMethodService implements View.OnTouchList
         
         View keyPopupView = getLayoutInflater().inflate(R.layout.key_popup_view, null);
         keyPopupWindow = new PopupWindow(keyPopupView);
-        
+
         currentInputView = mainKeyboardView;
         return mainKeyboardView;
     }
-    
+
     
     @Override
     public boolean onTouch(View view, MotionEvent event) {
@@ -74,6 +74,11 @@ public class ControlBoard extends InputMethodService implements View.OnTouchList
                     onKeyDown(view);
                 }
                 break;
+                
+            case MotionEvent.ACTION_CANCEL:
+                // skip cancel event when layout is about to change 
+                if (((String)view.getTag()).contains("LOAD")) break;
+                
             case MotionEvent.ACTION_UP:
                 onKeyUp(view);
                 break;

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<com.bikram.controlboard.KeyboardLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:CB="com.bikram.controlboard"
     android:id="@+id/symbols_keyboard_view"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -121,4 +120,4 @@
     
 
 
-</LinearLayout>
+</com.bikram.controlboard.KeyboardLayout>
