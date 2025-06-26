@@ -53,7 +53,8 @@ public class ControlBoard extends InputMethodService implements View.OnTouchList
         
         View keyPopupView = getLayoutInflater().inflate(R.layout.key_popup_view, null);
         keyPopupWindow = new PopupWindow(keyPopupView);
-
+        keyPopupWindow.setEnterTransition((new android.transition.Fade(1)).setDuration(0));
+        keyPopupWindow.setExitTransition((new android.transition.Fade(2)).setDuration(50));
         currentInputView = mainKeyboardView;
         return mainKeyboardView;
     }
@@ -63,6 +64,7 @@ public class ControlBoard extends InputMethodService implements View.OnTouchList
     public boolean onTouch(View view, MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_POINTER_DOWN:
                 currentPressedKey = view;
                 if (keyPopupWindow.isShowing()) keyPopupWindow.dismiss();
                 onKeyDown(view);

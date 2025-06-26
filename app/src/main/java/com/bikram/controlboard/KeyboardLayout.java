@@ -19,7 +19,9 @@ public class KeyboardLayout extends LinearLayout {
                 return false;
                 
             case MotionEvent.ACTION_MOVE:
-                float x = event.getRawX(), y = event.getRawY();
+            case MotionEvent.ACTION_POINTER_DOWN:
+                int p = event.getPointerCount()-1;
+                float x = event.getRawX(p), y = event.getRawY(p);
                 View v = ControlBoard.self.currentPressedKey;
                 int[] loc = new int[2];
                 v.getLocationOnScreen(loc);
@@ -33,7 +35,8 @@ public class KeyboardLayout extends LinearLayout {
     
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float x = event.getRawX(), y = event.getRawY();
+        int p = event.getPointerCount()-1;
+        float x = event.getRawX(p), y = event.getRawY(p);
         int countL = getChildCount();
         for (int i = 0; i < countL; i++) {
             LinearLayout ll = (LinearLayout)getChildAt(i);
